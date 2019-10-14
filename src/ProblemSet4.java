@@ -28,7 +28,7 @@ public class ProblemSet4 {
         // comment out or uncomment as needed
         
         //ps.sum();
-        ps.reverse();
+        //ps.reverse();
         ps.digits();
         ps.average();
         ps.prime();
@@ -112,7 +112,23 @@ public class ProblemSet4 {
      */
     
     public void digits() {
+        int positiveNumber = 0;
+        long total = 0;
+        System.out.println("");
+        do {
+            System.out.print("Positive integer: ");
+            positiveNumber = in.nextInt();
+            in.nextLine();
+        } while (positiveNumber <= 0);
 
+        System.out.println("");
+        while (positiveNumber > 0) {
+            if (positiveNumber % 2 != 0) {
+                total += (positiveNumber % 10);
+            }
+            positiveNumber /= 10;
+        }
+        System.out.println(total + ".");
     }
     
     /*
