@@ -52,7 +52,28 @@ public class ProblemSet4 {
      */
     
     public void sum() {
+        int lowerBound = -1;
+        int upperBound = 1;
+        long total = 0;
+        System.out.println("");
 
+        do {
+            System.out.print("Lower bound: ");
+            lowerBound = in.nextInt();
+            in.nextLine();
+            System.out.print("Upper bound: ");
+            upperBound = in.nextInt();
+            in.nextLine();
+        } while (upperBound < lowerBound);
+
+        int i = lowerBound;
+        while (i <= upperBound) {
+            if (i % 2 == 0) {
+                total += i;
+            }
+            i++;
+        }
+        System.out.printf("\n%,d", total);
     }
     
     /*

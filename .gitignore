@@ -1,3 +1,4 @@
+src/*.class
 .classpath
 .project
 .settings/
