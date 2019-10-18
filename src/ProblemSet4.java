@@ -205,7 +205,37 @@ public class ProblemSet4 {
      */
     
     public void fibonacci() {
+        int positiveNumber = 0;
+        System.out.println("");
+        do {
+            System.out.print("Positive integer: ");
+            positiveNumber = in.nextInt();
+        } while (positiveNumber < 1 || positiveNumber > 92);
+        positiveNumber += 1;
+        
+        int lowerFibNum = 0;
+        int higherFibNum = 1;
 
+        //issue: higher and lower one switches over and over
+        for (int i = 0; i < positiveNumber - 1; i++) {
+            int placeHolder;
+            int firstFibNum = lowerFibNum;
+            int secFibNum = higherFibNum;
+            
+            placeHolder = firstFibNum;
+            firstFibNum = secFibNum;
+            secFibNum = placeHolder + firstFibNum;
+            
+            if (firstFibNum > secFibNum) {
+                higherFibNum = firstFibNum;
+                lowerFibNum = secFibNum;
+            } else {
+                lowerFibNum = firstFibNum;
+                higherFibNum = secFibNum;
+            }
+        }
+
+        System.out.printf("\n" + lowerFibNum + ".");
     }
     
     /*
