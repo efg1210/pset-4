@@ -30,8 +30,8 @@ public class ProblemSet4 {
         //ps.sum();
         //ps.reverse();
         //ps.digits();
-        ps.average();
-        ps.prime();
+        //ps.average();
+        //ps.prime();
         ps.fibonacci();
         ps.factors();
         ps.mario();
@@ -152,10 +152,7 @@ public class ProblemSet4 {
                 numberCount++;
             }
         } while (positiveNumber >= 0);
-        System.out.println(total);
-        System.out.println(numberCount);
         double average = (double) (total/numberCount);
-        System.out.println(average);
         System.out.printf("\n%,.2f.", average);
     }
     
@@ -166,7 +163,38 @@ public class ProblemSet4 {
      */
     
     public void prime() {
+        int positiveNumber = 0;
+        boolean isPrime = true;
+        System.out.println("");
+        do {
+            System.out.print("Non-negative integer: ");
+            positiveNumber = in.nextInt();
+        } while (positiveNumber < 0);
 
+        if (positiveNumber == 2 || positiveNumber == 3 || positiveNumber == 5) {
+            isPrime = true;
+        } else if (positiveNumber <= 1) {
+            isPrime = false;
+        } else {
+            int counter = 0;
+            for (int i = 2; i < positiveNumber; i++) {
+                if (positiveNumber % i == 0) {
+                    counter++;
+                }
+            }
+        
+            if (counter == 0) {
+                isPrime = true;
+            } else {
+                isPrime = false;
+            }
+        }
+
+        if (isPrime) {
+            System.out.println("\nPrime.");
+        } else {
+            System.out.println("\nNot prime.");
+        }
     }
     
     /*
