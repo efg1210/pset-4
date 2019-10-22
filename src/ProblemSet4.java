@@ -33,7 +33,7 @@ public class ProblemSet4 {
         //ps.average();
         //ps.prime();
         //ps.fibonacci();
-        ps.factors();
+        //ps.factors();
         ps.mario();
         ps.luigi();
         ps.credit();
@@ -246,7 +246,6 @@ public class ProblemSet4 {
     
     public void factors() {
         int positiveNumber = 0;
-        boolean isPrime = true;
         System.out.println("");
         do {
             System.out.print("Positive integer: ");
@@ -277,8 +276,30 @@ public class ProblemSet4 {
      * Mario-style half-pyramid of the specified height.
      */
     
-    public void mario() {        
+    public void mario() {
+        int height = 0;
+        System.out.println("");
+        do {
+            System.out.print("Positive integer: ");
+            height = in.nextInt();
+        } while (height <= 0);
 
+        String pyramid = "";
+        int blockNum = 2;
+        height++;
+
+        while (height >= blockNum) {
+            pyramid += "\n";
+            for (int i = height; blockNum < i; i--) {
+                pyramid += " ";
+            }
+            for (int i = blockNum; i < 0; i--) {
+                pyramid += "#";
+            }
+            blockNum++;
+        }
+
+        System.out.println(pyramid);
     }
     
     /*
