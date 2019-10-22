@@ -33,7 +33,7 @@ public class ProblemSet4 {
         //ps.average();
         //ps.prime();
         //ps.fibonacci();
-        //ps.factors();
+        ps.factors();
         ps.mario();
         ps.luigi();
         ps.credit();
