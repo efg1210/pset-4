@@ -32,8 +32,8 @@ public class ProblemSet4 {
         //ps.digits();
         //ps.average();
         //ps.prime();
-        ps.fibonacci();
-        ps.factors();
+        //ps.fibonacci();
+        //ps.factors();
         ps.mario();
         ps.luigi();
         ps.credit();
@@ -245,7 +245,29 @@ public class ProblemSet4 {
      */
     
     public void factors() {
+        int positiveNumber = 0;
+        boolean isPrime = true;
+        System.out.println("");
+        do {
+            System.out.print("Positive integer: ");
+            positiveNumber = in.nextInt();
+        } while (positiveNumber <= 0);
 
+        String message = "";
+        for (int i = 1; i < positiveNumber + 1; i++) {
+            if (positiveNumber % i == 0) {
+                message += i;
+                message += ", ";
+                int otherFactor = positiveNumber / i;
+                message += otherFactor;
+                message += ", ";
+            }
+        }
+
+        message = message.substring(0, ((message.length() - 1) / 2));
+        message = message.substring(0, message.length() - 1);
+        message += ".";
+        System.out.println(message);
     }
     
     /*
