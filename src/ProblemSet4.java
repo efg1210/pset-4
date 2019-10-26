@@ -35,7 +35,7 @@ public class ProblemSet4 {
         //ps.fibonacci();
         //ps.factors();
         //ps.mario();
-        ps.luigi();
+        //ps.luigi();
         ps.credit();
                 
         in.close();
@@ -353,6 +353,58 @@ public class ProblemSet4 {
      */
     
     public void credit() {
-        
+        System.out.print("\nNumber: ");
+        long cardNumber = in.nextLong();
+        long cardNumCounter = cardNumber;
+        int total = 0;
+        int counter = 1;
+        while (cardNumCounter > 0) {
+            int lastDigit = (int) (cardNumCounter % 10);
+            int currentAdded;
+            //checks if it is an even point
+            if (counter % 2 == 0) {
+                /* checks if the multiplication is greater than 10
+                 * and if so it adds the digits seperately
+                 */
+                if((lastDigit * 2) >= 10) {
+                    currentAdded = ((lastDigit * 2) % 10);
+                    currentAdded += ((lastDigit * 2) / 10);
+                } else {
+                    currentAdded = (lastDigit * 2);
+                }
+            } else {
+                currentAdded = lastDigit;
+            }
+            total += currentAdded;
+            counter++;
+            cardNumCounter /= 10;
+        }
+
+        String bankType = "";
+
+        String cardNumTester = String.valueOf(cardNumber);
+        String firstTwoNum = cardNumTester.substring(0, 2);
+        if (total % 10 == 0) {
+            if (firstTwoNum.equals("34") || firstTwoNum.equals("37")) {
+                if (cardNumTester.length() == 15) {
+                    bankType = "Amex.";
+                }
+            } else if (firstTwoNum.equals("51") || firstTwoNum.equals("52") || firstTwoNum.equals("53")
+            || firstTwoNum.equals("54") || firstTwoNum.equals("55")) {
+                if (cardNumTester.length() == 16) {
+                    bankType = "Mastercard.";
+                }
+            } else if (cardNumTester.substring(0, 1).equals("4")) {
+                if (cardNumTester.length() == 16 || cardNumTester.length() == 13) {
+                    bankType = "Visa.";
+                }
+            }
+        }
+
+        if (bankType.equals("")) {
+            bankType = "Invalid.";
+        }
+
+        System.out.println("\n" + bankType);
     }
 }
