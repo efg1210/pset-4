@@ -34,7 +34,7 @@ public class ProblemSet4 {
         //ps.prime();
         //ps.fibonacci();
         //ps.factors();
-        ps.mario();
+        //ps.mario();
         ps.luigi();
         ps.credit();
                 
@@ -311,7 +311,38 @@ public class ProblemSet4 {
      */
     
     public void luigi() {
+        int height = 0;
+        System.out.println("");
+        do {
+            System.out.print("Height: ");
+            height = in.nextInt();
+        } while (height < 1 || height > 24);
 
+        String pyramid = "";
+        int blockNum = 2;
+        height++;
+
+        while (height >= blockNum) {
+            pyramid += "\n";
+            for (int i = 0; i < height - blockNum; i++) {
+                pyramid += " ";
+            }
+            
+            for (int i = 0; i < blockNum; i++) {
+                pyramid += "#";
+            }
+            
+            pyramid += " ";
+            pyramid += " ";
+
+            for (int i = 0; i < blockNum; i++) {
+                pyramid += "#";
+            }
+
+            blockNum++;
+        }
+
+        System.out.println(pyramid);
     }
     
     /*
