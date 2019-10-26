@@ -27,15 +27,15 @@ public class ProblemSet4 {
         
         // comment out or uncomment as needed
         
-        //ps.sum();
-        //ps.reverse();
-        //ps.digits();
-        //ps.average();
-        //ps.prime();
-        //ps.fibonacci();
-        //ps.factors();
-        //ps.mario();
-        //ps.luigi();
+        ps.sum();
+        ps.reverse();
+        ps.digits();
+        ps.average();
+        ps.prime();
+        ps.fibonacci();
+        ps.factors();
+        ps.mario();
+        ps.luigi();
         ps.credit();
                 
         in.close();
@@ -97,7 +97,7 @@ public class ProblemSet4 {
             if (positiveNumber >= 10) {
                 System.out.print((positiveNumber % 10) + ", ");
             } else {
-                System.out.print((positiveNumber % 10) + ".");
+                System.out.println((positiveNumber % 10) + ".");
             }
             positiveNumber /= 10;
         }
@@ -154,6 +154,7 @@ public class ProblemSet4 {
         } while (positiveNumber >= 0);
         double average = (double) (total/numberCount);
         System.out.printf("\n%,.2f.", average);
+        System.out.println("");
     }
     
     /*
@@ -235,7 +236,7 @@ public class ProblemSet4 {
             }
         }
 
-        System.out.printf("\n" + lowerFibNum + ".");
+        System.out.println("\n" + lowerFibNum + ".");
     }
     
     /*
@@ -266,7 +267,7 @@ public class ProblemSet4 {
         message = message.substring(0, ((message.length() - 1) / 2));
         message = message.substring(0, message.length() - 1);
         message += ".";
-        System.out.println(message);
+        System.out.println("\n" + message);
     }
     
     /*
