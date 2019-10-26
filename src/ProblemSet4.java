@@ -280,9 +280,9 @@ public class ProblemSet4 {
         int height = 0;
         System.out.println("");
         do {
-            System.out.print("Positive integer: ");
+            System.out.print("Height: ");
             height = in.nextInt();
-        } while (height <= 0);
+        } while (height < 1 || height > 24);
 
         String pyramid = "";
         int blockNum = 2;
@@ -290,10 +290,11 @@ public class ProblemSet4 {
 
         while (height >= blockNum) {
             pyramid += "\n";
-            for (int i = height; blockNum < i; i--) {
+            for (int i = 0; i < height - blockNum; i++) {
                 pyramid += " ";
             }
-            for (int i = blockNum; i < 0; i--) {
+            
+            for (int i = 0; i < blockNum; i++) {
                 pyramid += "#";
             }
             blockNum++;
